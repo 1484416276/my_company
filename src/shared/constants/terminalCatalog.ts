@@ -1,10 +1,11 @@
+import type { TerminalType } from "@/shared/types/terminal";
 // 终端成员的内置目录与默认视觉配置，作为邀请与展示的来源。
 export type BaseTerminal = {
   id: string;
   nameKey?: string;
   label?: string;
   command: string;
-  terminalType: 'codex' | 'gemini' | 'claude' | 'shell';
+  terminalType: TerminalType;
   icon: string;
   gradient: string;
 };

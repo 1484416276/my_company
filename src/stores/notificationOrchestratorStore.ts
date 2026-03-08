@@ -119,7 +119,7 @@ export const useNotificationOrchestratorStore = defineStore('notification-orches
     if (displayName) {
       return displayName;
     }
-    return currentUser?.value?.name ?? 'Owner';
+    return currentUser?.name ?? 'Owner';
   };
 
   const resolveUnreadConversations = () => {

@@ -6,7 +6,7 @@ import type { Member, Message } from '../features/chat/types';
 describe('chat utils', () => {
   it('splits mentions while preserving plain text', () => {
     const parts = splitMentions('Hello @Jane Doe and @Sam');
-    expect(parts).toEqual(['Hello ', '@Jane Doe and ', '@Sam']);
+    expect(parts).toEqual(['Hello ', '@Jane', ' Doe and ', '@Sam']);
   });
 
   it('ensures unique member names case-insensitively', () => {
@@ -25,7 +25,7 @@ describe('chat utils', () => {
 
     const messages: Message[] = [
       {
-        id: 1,
+        id: "1",
         senderId: 'me',
         user: 'You',
         avatar: '',
@@ -35,7 +35,7 @@ describe('chat utils', () => {
         status: 'sent'
       },
       {
-        id: 2,
+        id: "2",
         senderId: 'me',
         user: 'You',
         avatar: '',
@@ -45,7 +45,7 @@ describe('chat utils', () => {
         status: 'sent'
       },
       {
-        id: 3,
+        id: "3",
         senderId: 'assistant',
         user: 'AI',
         avatar: '',

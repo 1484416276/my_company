@@ -35,21 +35,26 @@ export const useWorkspaceBootstrap = () => {
       return;
     }
 
-    await projectStore.hydrate();
-    if (requestId !== initSequence) {
-      return;
-    }
-    await chatStore.loadSession();
-    if (requestId !== initSequence) {
-      return;
-    }
-    await terminalMemberStore.syncWorkspaceStatuses({ force: true, reason: 'workspace-bootstrap' });
+    try {
+      await projectStore.hydrate();
+      if (requestId !== initSequence) {
+        return;
+      }
+      await chatStore.loadSession();
+      if (requestId !== initSequence) {
+        return;
+      }
+      await terminalMemberStore.syncWorkspaceStatuses({ force: true, reason: 'workspace-bootstrap' });
 
-    if (requestId !== initSequence) {
-      return;
-    }
+      if (requestId !== initSequence) {
+        return;
+      }
 
-    appReady.value = true;
+      appReady.value = true;
+    } catch (error) {
+      console.error('[useWorkspaceBootstrap] Failed to initialize workspace:', error);
+      appReady.value = true;
+    }
   };
 
   watch(

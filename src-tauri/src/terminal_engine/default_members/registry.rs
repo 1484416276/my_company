@@ -47,13 +47,15 @@ pub(crate) struct TerminalDefaultMemberConfig {
 use super::{
     claude::CLAUDE_DEFAULT_MEMBER, codex::CODEX_DEFAULT_MEMBER, gemini::GEMINI_DEFAULT_MEMBER,
     opencode::OPENCODE_DEFAULT_MEMBER, qwen::QWEN_DEFAULT_MEMBER, shell::SHELL_DEFAULT_MEMBER,
+    zeroclaw::ZEROCLAW_DEFAULT_MEMBER,
 };
 
-pub(crate) const DEFAULT_TERMINAL_MEMBERS: [TerminalDefaultMemberConfig; 6] = [
+pub(crate) const DEFAULT_TERMINAL_MEMBERS: [TerminalDefaultMemberConfig; 7] = [
     GEMINI_DEFAULT_MEMBER,
     CODEX_DEFAULT_MEMBER,
     CLAUDE_DEFAULT_MEMBER,
     OPENCODE_DEFAULT_MEMBER,
+    ZEROCLAW_DEFAULT_MEMBER,
     QWEN_DEFAULT_MEMBER,
     SHELL_DEFAULT_MEMBER,
 ];

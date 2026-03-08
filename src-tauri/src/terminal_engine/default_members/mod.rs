@@ -9,6 +9,7 @@ pub(crate) mod opencode;
 pub(crate) mod qwen;
 pub(crate) mod registry;
 pub(crate) mod shell;
+pub(crate) mod zeroclaw;
 
 pub(crate) use registry::{
     apply_resume_command, apply_unlimited_access_command, resolve_default_command_for_invite,

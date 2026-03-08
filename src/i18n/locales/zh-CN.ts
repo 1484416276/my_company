@@ -696,6 +696,7 @@ export default {
       codex: 'Codex',
       claude: 'Claude Code',
       opencode: 'opencode',
+      zeroclaw: 'ZeroClaw',
       qwen: 'Qwen Code',
       terminal: '终端',
       custom: '自定义 CLI'
@@ -737,6 +738,52 @@ export default {
         label: '系统',
         desc: '跟随操作系统外观设置。'
       }
+    }
+  },
+  organization: {
+    title: "组织架构",
+    subtitle: "管理公司部门与职级架构",
+    departments: {
+      executive: "高管层",
+      rd: "研发部",
+      product: "产品部",
+      marketing: "营销部",
+      sales: "销售部",
+      finance: "财务部",
+      accounting: "会计部",
+      legal: "法务部",
+      hr: "人力资源部",
+      operations: "运营部",
+      custom: "自定义部门"
+    },
+    jobLevels: {
+      cLevel: "C级高管",
+      vp: "副总裁",
+      director: "总监",
+      manager: "经理",
+      senior: "高级",
+      junior: "初级",
+      intern: "实习生"
+    },
+    titles: {
+      ceo: "首席执行官",
+      cto: "首席技术官",
+      cfo: "首席财务官",
+      productDirector: "产品总监",
+      rdLead: "研发经理",
+      marketingLead: "营销经理",
+      legalAdvisor: "法务顾问",
+      hrManager: "人力资源经理",
+      accountant: "会计",
+      opsSpecialist: "运营专员"
+    },
+    actions: {
+      addDepartment: "添加部门",
+      editDepartment: "编辑部门",
+      deleteDepartment: "删除部门",
+      addMember: "添加成员",
+      assignRole: "分配角色",
+      viewOrgChart: "查看组织架构图"
     }
   },
   language: {

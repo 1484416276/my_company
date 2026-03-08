@@ -10,6 +10,7 @@ import { logDiagnosticsEvent } from '@/shared/monitoring/diagnostics/logger';
 import type { Conversation, Member, MessageMentionsPayload } from '@/features/chat/types';
 import type { TerminalDispatchRequest } from '@/shared/types/terminalDispatch';
 import type { TerminalChatPayload } from '@/features/terminal/terminalBridge';
+import type { TerminalFriendInviteMeta } from "@/shared/types/terminal";
 
 const formatError = (error: unknown) => (error instanceof Error ? error.message : String(error));
 const uniqueMemberIds = (ids: string[]) => Array.from(new Set(ids.filter((id) => id)));
@@ -33,7 +34,7 @@ export const useTerminalOrchestratorStore = defineStore('terminal-orchestrator',
    * 输入：成员信息与打开标签控制。
    * 输出：会话条目或 null。
    */
-  const ensureMemberSession = async (member: Member, options?: { openTab?: boolean }) => {
+  const ensureMemberSession = async (member: Member, options?: { openTab?: boolean; inviteMeta?: TerminalFriendInviteMeta }) => {
     if (!hasTerminalConfig(member.terminalType, member.terminalCommand)) {
       return null;
     }
@@ -105,7 +106,7 @@ export const useTerminalOrchestratorStore = defineStore('terminal-orchestrator',
     }
   };
 
-  const handleMentionAllTerminalDispatch = () => {};
+  const handleMentionAllTerminalDispatch = (_conversationId: string, _senderId: string) => {};
 
   const resolveTerminalTargets = (
     conversation: Conversation,

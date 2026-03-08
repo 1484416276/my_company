@@ -1,5 +1,6 @@
 // 聊天领域模型：定义成员、会话与消息的共享类型契约。
 import type { TerminalConnectionStatus, TerminalType } from '@/shared/types/terminal';
+import type { DepartmentType, JobLevel, ZeroClawInstance } from "@/shared/types/organization";
 import type { ConversationType } from '@/shared/types/conversation';
 export type { ConversationType } from '@/shared/types/conversation';
 
@@ -27,6 +28,14 @@ export type Member = {
   manualStatus?: MemberStatus;
   unlimitedAccess?: boolean;
   sandboxed?: boolean;
+  // 组织架构扩展
+  departmentId?: string;
+  departmentType?: DepartmentType;
+  jobLevelId?: string;
+  title?: string;
+  employeeId?: string;
+  reportsTo?: string;
+  zeroclawInstance?: ZeroClawInstance;
 };
 
 export type Contact = {

@@ -1,5 +1,5 @@
 // 终端相关基础类型与守卫函数，作为跨模块契约的唯一来源。
-export type TerminalType = 'shell' | 'codex' | 'gemini' | 'claude' | 'opencode' | 'qwen';
+export type TerminalType = 'shell' | 'codex' | 'gemini' | 'claude' | 'opencode' | 'zeroclaw' | 'qwen';
 export type TerminalConnectionStatus = 'pending' | 'connecting' | 'connected' | 'working' | 'disconnected';
 export type TerminalPostReadyMode = 'invite' | 'none';
 
@@ -30,6 +30,7 @@ export const isTerminalType = (value: unknown): value is TerminalType =>
   value === 'gemini' ||
   value === 'claude' ||
   value === 'opencode' ||
+  value === 'zeroclaw' ||
   value === 'qwen';
 
 /**

@@ -35,10 +35,6 @@
               <span class="material-symbols-outlined text-[20px]" :class="activeSection === 'notifications' ? 'text-primary' : ''">notifications</span>
               <span class="text-[14px] font-medium hidden md:inline">{{ t('settings.notifications') }}</span>
             </button>
-            <button type="button" :title="t('organization.title')" @click="scrollToSection('organization')" :class="sectionButtonClass('organization')">
-              <span class="material-symbols-outlined text-[20px]" :class="activeSection === 'organization' ? 'text-primary' : ''">corporate_fare</span>
-              <span class="text-[14px] font-medium hidden md:inline">{{ t('organization.title') }}</span>
-            </button>
             <button type="button" :title="t('settings.keybinds')" @click="scrollToSection('keybinds')" :class="sectionButtonClass('keybinds')">
               <span class="material-symbols-outlined text-[20px]" :class="activeSection === 'keybinds' ? 'text-primary' : ''">keyboard_command_key</span>
               <span class="text-[14px] font-medium hidden md:inline">{{ t('settings.keybinds') }}</span>
@@ -722,16 +718,7 @@
         </section>
 
         <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-12"></div>
-        <section ref="organizationRef" id="organization" class="mb-12 scroll-mt-8">
-          <h2 class="text-white/90 text-lg font-semibold mb-2 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary">corporate_fare</span>
-            {{ t('organization.title') }}
-          </h2>
-          <p class="text-white/40 text-sm">{{ t('organization.subtitle') }}</p>
-          <div class="bg-white/[0.03] border border-white/5 rounded-2xl mt-6 p-6">
-            <OrganizationSettings />
-          </div>
-        </section>
+
         <section ref="keybindsRef" id="keybinds" class="scroll-mt-8">
           <h2 class="text-white/90 text-lg font-semibold mb-2 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">keyboard_command_key</span>
@@ -894,7 +881,6 @@ import { useWorkspaceStore } from '@/features/workspace/workspaceStore';
 import { useChatStore } from '@/features/chat/chatStore';
 import { clearAllChatMessages, repairChatMessages } from '@/features/chat/chatBridge';
 import AvatarBadge from '@/shared/components/AvatarBadge.vue';
-import OrganizationSettings from '@/features/settings/OrganizationSettings.vue';
 import { AVATAR_PRESETS, DEFAULT_AVATAR_ID } from '@/shared/constants/avatars';
 import { useSpinOnce } from '@/shared/animations/useSpinOnce';
 import {
@@ -1010,7 +996,6 @@ const membersRef = ref<HTMLElement | null>(null);
 const notificationsRef = ref<HTMLElement | null>(null);
 const keybindsRef = ref<HTMLElement | null>(null);
 const dataRef = ref<HTMLElement | null>(null);
-const organizationRef = ref<HTMLElement | null>(null);
 const sectionRefs: Array<{ id: SectionId; ref: typeof accountRef }> = [
   { id: 'account', ref: accountRef },
   { id: 'appearance', ref: appearanceRef },
@@ -1018,7 +1003,6 @@ const sectionRefs: Array<{ id: SectionId; ref: typeof accountRef }> = [
   { id: 'members', ref: membersRef },
   { id: 'notifications', ref: notificationsRef },
   { id: 'keybinds', ref: keybindsRef },
-  { id: 'organization', ref: organizationRef },
   { id: 'data', ref: dataRef }
 ];
 const activeSection = ref<SectionId>('account');

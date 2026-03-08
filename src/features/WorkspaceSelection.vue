@@ -138,7 +138,12 @@ const searchQuery = ref('');
 const errorTimer = ref<number | null>(null);
 
 const handleOpenFolder = async () => {
-  await openWorkspaceDialog();
+  console.log('[WorkspaceSelection] handleOpenFolder called');
+  try {
+    await openWorkspaceDialog();
+  } catch (error) {
+    console.error('[WorkspaceSelection] Error in handleOpenFolder:', error);
+  }
 };
 
 const handleOpenRecent = async (path: string) => {

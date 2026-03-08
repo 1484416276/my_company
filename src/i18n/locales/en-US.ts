@@ -696,6 +696,7 @@ export default {
       codex: 'Codex',
       claude: 'Claude Code',
       opencode: 'opencode',
+      zeroclaw: 'ZeroClaw',
       qwen: 'Qwen Code',
       terminal: 'Terminal',
       custom: 'Custom CLI'
@@ -737,6 +738,52 @@ export default {
         label: 'System',
         desc: 'Follows your operating system appearance.'
       }
+    }
+  },
+  organization: {
+    title: "Organization",
+    subtitle: "Manage company departments and job levels",
+    departments: {
+      executive: "Executive",
+      rd: "R&D",
+      product: "Product",
+      marketing: "Marketing",
+      sales: "Sales",
+      finance: "Finance",
+      accounting: "Accounting",
+      legal: "Legal",
+      hr: "Human Resources",
+      operations: "Operations",
+      custom: "Custom Department"
+    },
+    jobLevels: {
+      cLevel: "C-Level",
+      vp: "VP",
+      director: "Director",
+      manager: "Manager",
+      senior: "Senior",
+      junior: "Junior",
+      intern: "Intern"
+    },
+    titles: {
+      ceo: "CEO",
+      cto: "CTO",
+      cfo: "CFO",
+      productDirector: "Product Director",
+      rdLead: "R&D Manager",
+      marketingLead: "Marketing Manager",
+      legalAdvisor: "Legal Advisor",
+      hrManager: "HR Manager",
+      accountant: "Accountant",
+      opsSpecialist: "Operations Specialist"
+    },
+    actions: {
+      addDepartment: "Add Department",
+      editDepartment: "Edit Department",
+      deleteDepartment: "Delete Department",
+      addMember: "Add Member",
+      assignRole: "Assign Role",
+      viewOrgChart: "View Organization Chart"
     }
   },
   language: {

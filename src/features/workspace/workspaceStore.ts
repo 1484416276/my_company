@@ -209,7 +209,9 @@ export const useWorkspaceStore = defineStore('workspace', () => {
   const openWorkspaceDialog = async () => {
     try {
       workspaceError.value = null;
+      console.log('[workspaceStore] Opening dialog...');
       const selection = await open({ directory: true, multiple: false });
+      console.log('[workspaceStore] Dialog selection:', selection);
       if (!selection || Array.isArray(selection)) {
         return null;
       }
