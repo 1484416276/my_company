@@ -1,0 +1,98 @@
+{
+  "name": "my_company_packages",
+  "version": "1.0.0",
+  "description": "Operit工具包市场 - 可用的AI助手工具包",
+  "packages": [
+    {
+      "name": "code_runner",
+      "description": "多语言代码执行能力，支持JavaScript、Python、Ruby、Go、Rust、C和C++",
+      "icon": "🏃",
+      "tools": ["run_javascript_node", "run_python", "run_go", "run_rust", "run_c", "run_cpp"],
+      "category": "development"
+    },
+    {
+      "name": "super_admin",
+      "description": "超级管理员工具集，提供终端命令和Shell操作",
+      "icon": "🔐",
+      "tools": ["terminal", "shell"],
+      "category": "system"
+    },
+    {
+      "name": "daily_life",
+      "description": "日常生活工具：天气、提醒、闹钟、短信、电话、截图、拍照等",
+      "icon": "📅",
+      "tools": ["get_weather", "set_alarm", "send_sms", "take_photo"],
+      "category": "lifestyle"
+    },
+    {
+      "name": "extended_chat",
+      "description": "对话工具包：管理对话、跨话题读取消息、发送消息",
+      "icon": "💬",
+      "tools": ["list_chats", "send_message", "chat_with_agent"],
+      "category": "communication"
+    },
+    {
+      "name": "extended_file_tools",
+      "description": "拓展文件工具：移动、复制、压缩、解压、分享文件",
+      "icon": "📁",
+      "tools": ["move_file", "copy_file", "zip_files", "unzip_files"],
+      "category": "utility"
+    },
+    {
+      "name": "workflow",
+      "description": "工作流管理：创建、查询、更新、删除、触发执行",
+      "icon": "🔄",
+      "tools": ["create_workflow", "update_workflow", "trigger_workflow"],
+      "category": "automation"
+    },
+    {
+      "name": "various_search",
+      "description": "多平台搜索：必应、百度、搜狗、夸克等",
+      "icon": "🔍",
+      "tools": ["search"],
+      "category": "information"
+    },
+    {
+      "name": "pollinations_draw",
+      "description": "AI图片生成功能",
+      "icon": "🎨",
+      "tools": ["draw"],
+      "category": "creativity"
+    },
+    {
+      "name": "system_tools",
+      "description": "系统级操作：设置管理、应用安装卸载、通知获取",
+      "icon": "⚙️",
+      "tools": ["get_settings", "install_app", "get_notifications"],
+      "category": "system"
+    },
+    {
+      "name": "ffmpeg",
+      "description": "多媒体处理：音视频转换、剪辑、压缩",
+      "icon": "🎬",
+      "tools": ["ffmpeg"],
+      "category": "media"
+    },
+    {
+      "name": "file_converter",
+      "description": "文件格式转换：音频、视频、图像、文档格式互转",
+      "icon": "📄",
+      "tools": ["convert"],
+      "category": "utility"
+    },
+    {
+      "name": "12306_ticket",
+      "description": "12306火车票信息查询：余票、中转、经停站",
+      "icon": "🚂",
+      "tools": ["query_tickets"],
+      "category": "travel"
+    },
+    {
+      "name": "crossref",
+      "description": "学术文献查询：DOI查询、关键词搜索、作者搜索",
+      "icon": "📚",
+      "tools": ["search_papers"],
+      "category": "research"
+    }
+  ]
+}

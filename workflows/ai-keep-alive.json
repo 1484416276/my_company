@@ -1,0 +1,52 @@
+{
+  "id": "ai-keep-alive",
+  "name": "AI自动续命",
+  "description": "每10分钟检查AI心跳，超过15分钟无心跳则自动发送消息触发继续工作",
+  "icon": "🔄",
+  "trigger": {
+    "type": "schedule",
+    "interval_ms": 600000
+  },
+  "nodes": [
+    {
+      "id": "calc_diff",
+      "name": "计算时间差",
+      "actionType": "super_admin:terminal",
+      "actionConfig": {
+        "command": "echo $(( $(date +%s) - $(cat /sdcard/Download/Operit/scripts/ai_heartbeat 2>/dev/null || echo 0) ))"
+      }
+    },
+    {
+      "id": "check_heartbeat",
+      "name": "检查心跳",
+      "type": "condition",
+      "condition": {
+        "left": { "nodeId": "calc_diff" },
+        "operator": "GT",
+        "right": 900
+      }
+    },
+    {
+      "id": "send_continue",
+      "name": "触发AI继续",
+      "actionType": "extended_chat:chat_with_agent",
+      "actionConfig": {
+        "character_card_name": "Operit",
+        "message": "【🔄 自动续命触发】请继续工作！"
+      }
+    },
+    {
+      "id": "log_ok",
+      "name": "记录正常",
+      "actionType": "super_admin:terminal",
+      "actionConfig": {
+        "command": "echo \"[$(date \x27+%Y-%m-%d %H:%M:%S\x27)] ✅ AI心跳正常\" >> /sdcard/Download/Operit/scripts/ai_monitor.log"
+      }
+    }
+  ],
+  "connections": [
+    { "source": "calc_diff", "target": "check_heartbeat" },
+    { "source": "check_heartbeat", "target": "send_continue", "condition": true },
+    { "source": "check_heartbeat", "target": "log_ok", "condition": false }
+  ]
+}
